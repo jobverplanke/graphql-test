@@ -2,7 +2,8 @@
 
 declare(strict_types=1);
 
-use App\Http\Controllers\GetPokemonController;
+use App\Http\Controllers\ExampleQueryBuilderController;
+use App\Http\Controllers\ExampleRawFileQueryController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -18,7 +19,10 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/{pokemon}', GetPokemonController::class);
+Route::get('/{pokemon}', ExampleQueryBuilderController::class);
+Route::get('/{pokemon}/raw/one', [ExampleRawFileQueryController::class, 'methodOne']);
+Route::get('/{pokemon}/raw/two', [ExampleRawFileQueryController::class, 'methodTwo']);
+Route::get('/{pokemon}/raw/three', [ExampleRawFileQueryController::class, 'methodThree']);
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
