@@ -10,6 +10,4 @@ use GraphQL\QueryBuilder\QueryBuilderInterface;
 interface Query
 {
     public function __invoke(): GraphQLQuery|QueryBuilderInterface;
-    public function getQuery(): GraphQLQuery|QueryBuilderInterface;
-    public function toGraphQuery(): string;
 }
