@@ -1,0 +1,10 @@
+query($pokemon: PokemonEnum!) {
+	getPokemon(pokemon: $pokemon reverseFlavorTexts: true takeFlavorTexts: 1) {
+		num
+		types
+		sprite
+		abilities { first second hidden }
+		serebiiPage
+		bulbapediaPage
+	}
+}
