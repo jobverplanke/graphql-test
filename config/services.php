@@ -33,9 +33,13 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    'pokemon' => [
-        'url' => env('POKEMON_URL'),
+    'graphql' => [
+        'url' => env('GRAPH_URL'),
         'ttl' => '30',
+        'paths' => [
+            app_path('Services/GraphQL/Queries/Raw'),
+            app_path('GraphQL'),
+        ]
     ],
 
 ];
